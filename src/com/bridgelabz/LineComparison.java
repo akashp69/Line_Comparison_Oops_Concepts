@@ -4,28 +4,46 @@ import java.util.Scanner;
 
 public class LineComparison {
     /**
-     * This Static Method is Used For Calculate the length
+     * Using Static Keywords For calcualte lengths of two points
      */
-    public static void LineComparision() {
-        Scanner scanner = new Scanner(System.in);
+    static double length1;
+    static double length2;
     /**
-    *Using x1,x2,y1 and y2 variables for calulate the length of line
-    */
+     *This is Static Method Used For getting the lengths of two lines
+     */
+    public static void TwoLineComparison() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the value of a1: ");
+        int a1 = scanner.nextInt();
+        System.out.println("Enter the value of a2: ");
+        int a2 = scanner.nextInt();
+        System.out.println("Enter the value of b1: ");
+        int b1 = scanner.nextInt();
+        System.out.println("Enter the value of b2: ");
+        int b2 = scanner.nextInt();
         System.out.println("Enter the value of x1: ");
         int x1 = scanner.nextInt();
         System.out.println("Enter the value of x2: ");
         int x2 = scanner.nextInt();
-        System.out.println("Enter the value of y1: ");
         int y1 = scanner.nextInt();
         System.out.println("Enter the value of y2: ");
         int y2 = scanner.nextInt();
-        double length1 = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        length1 = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
         System.out.println("Length of the line is: " + length1);
+        length2 = Math.sqrt((a2 - a1) * (a2 - a1) + (b2 - b1) * (b2 - b1));
+        System.out.println("Length of the line2 is: " + length2);
     }
     /**
-     * This Main Method is Used For Calling the Method Line Comaprison
+     *This is Static Method Used For Comparing the lengths of two lines
      */
-    public static void main(String[] args) {
-        LineComparision();
+    public static void checkingEqualsLine() {
+        int a = (int) length1;
+        int b = (int) length2;
+        if (a == b) {
+            System.out.println("Lines are equal");
+        } else {
+            System.out.println("Lines are not equal");
+        }
     }
 }
